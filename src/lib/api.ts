@@ -242,7 +242,7 @@ export async function downloadImageAPI(
 
   
   const response = await fetchWithAuth(
-    `${API_URL}/api/patient/images/${patientId}/${consultationId}/${encodeURIComponent(fileName)}/${acteId}`,
+    `${API_URL}/api/dicom/images/${patientId}/${consultationId}/${encodeURIComponent(fileName)}/${acteId}`,
     { method: 'GET' }
   );
 

@@ -78,6 +78,7 @@ export const ConsultationTable: React.FC<ConsultationTableProps> = ({
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
+      console.log(url)
       link.download = acte.imageFileName;
       document.body.appendChild(link);
       link.click();
@@ -192,22 +193,24 @@ export const ConsultationTable: React.FC<ConsultationTableProps> = ({
                             </button>
                           )}
                           {acte.imageFileName && (
-                            <button
-                              onClick={() => handleDownloadImages(consultation, acte)}
-                              disabled={downloading === `${consultation.id}-${acte.acteId}-images`}
-                              title="Télécharger les images DICOM"
-                              className="p-1.5 text-blue-600 hover:bg-blue-50 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                              {downloading === `${consultation.id}-${acte.acteId}-images` ? (
-                                <svg className="w-4 h-4 animate-spin" fill="currentColor" viewBox="0 0 24 24">
-                                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                                </svg>
-                              ) : (
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-                                </svg>
-                              )}
-                            </button>
+                     <button
+  onClick={() => handleDownloadImages(consultation, acte)}
+  disabled={downloading === `${consultation.id}-${acte.acteId}-images`}
+  title="Télécharger les images DICOM"
+  className="p-1.5 text-blue-600 hover:bg-blue-50 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
+>
+  {downloading === `${consultation.id}-${acte.acteId}-images` ? (
+    <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" className="opacity-25" />
+      <path fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a12 12 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z" className="opacity-75"/>
+    </svg>
+  ) : (
+    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24">
+      <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )}
+</button>
+
                           )}
                         </div>
                       </div>
