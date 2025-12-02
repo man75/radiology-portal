@@ -22,7 +22,7 @@ export default function HomePage() {
 
         {/* Title */}
         <div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">MedRay</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">ClickRadio</h1>
           <p className="text-xl text-gray-600">
             Plateforme sécurisée de consultation de vos images de radiologie
           </p>
