@@ -78,10 +78,7 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* Demo Info */}
-        <p className="text-sm text-gray-600 mt-8">
-          📧 <strong>Démo:</strong> Utilisez n'importe quel email + mot de passe: <code className="bg-gray-200 px-2 py-1 rounded">password</code>
-        </p>
+       
       </div>
     </div>
   );
